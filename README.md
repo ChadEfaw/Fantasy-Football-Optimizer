@@ -1,7 +1,7 @@
 # Fantasy-Football-Optimizer
 
 ## Description:
-This is R code using rvest, dplyr and googlesheets packages to scrape html data from daily fantasy websites such as Draft Kings or FanDuel and store collected data into a google sheets linear optimizer model.
+This is R code using rvest, dplyr googlesheets packages and Selector Gadget to scrape html data from daily fantasy websites such as Draft Kings or FanDuel and store collected data into a google sheets linear optimizer model.
 
 ## Optimization Model
 The optimization model is a straight linear optimization that calculates the best use of resources given budget constraints and expected player values. 
