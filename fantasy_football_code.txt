@@ -1,0 +1,52 @@
+# Chad Efaw
+# Fantasy Football Optimizer
+# Using dplyr, rvest and googlesheets to scrape, manipulate and store 
+# fantasy football expected values and costs from short-form 
+# fantasy sports websites
+
+# Install the appropriate libraries 
+
+library(dplyr)
+library(rvest)
+library(googlesheets)
+
+# Point to URL of fantasy football website of choice 
+
+fantasy_df <- html("Enter Fantasy Football URL here ")
+
+# Use rvest function to point to specific table on website coerce to a data frame
+# The number between [[double brackets]] is subject to change
+
+fantasy_df<-
+as.data.frame(
+df %>%
+  html_nodes("table") %>%
+  .[[1]] %>%
+  html_table())
+# Use d/plyr function to rename columns
+# Variable names are also subject to change dependant on user
+
+df<-
+rename(df, c("X1" = "Name", "X2" = "Expected Value", "X3" = "Cost"))
+
+# Use google sheets package to store prior data into Optimizer google sheet
+# Point to specific googlesheets URL
+
+optimizer_url <- gs_url("Enter specific Google Sheet URL here")
+
+# Create an object that contains the specific name of the sheet
+# When you run the prior code, it will give you the exact name
+
+fantasy <- gs_title("Enter specific sheet of Google Sheet")
+
+# create an object that contains the page you want to analyze
+
+Fantasy_optimizer <- gs_read(fantasy)
+
+# Use googlesheets function to read prior rvest html data into appropriate google sheet
+
+fantasy <- fantasy %>% 
+gs_edit_cells(input = c(fantasy_df),
+anchor = "Enter specific cell", byrow = TRUE)
+
+
