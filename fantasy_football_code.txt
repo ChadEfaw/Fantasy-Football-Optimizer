@@ -16,6 +16,7 @@ fantasy_df <- html("Enter Fantasy Football URL here ")
 
 # Use rvest function to point to specific table on website coerce to a data frame
 # The number between [[double brackets]] is subject to change
+# Use selector gadget (can be found at: http://selectorgadget.com/) to highlight html paths if [[table]] isn't appropriate
 
 fantasy_df<-
 as.data.frame(
