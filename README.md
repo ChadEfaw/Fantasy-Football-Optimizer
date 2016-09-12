@@ -9,8 +9,7 @@ Player values are calculated by the fantasy football website themselves and scra
 
 ## Disclaimer:
 This is just the R code that scrapes, manipulates and stores fantasy data from websites and pushes into Google Sheets
-The optimization model is a private google sheet
+The optimization model is a contained within a google sheet that is not currently public. 
 
 Thanks,
-
 Chad
