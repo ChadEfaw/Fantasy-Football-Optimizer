@@ -24,6 +24,7 @@ df %>%
   html_nodes("table") %>%
   .[[1]] %>%
   html_table())
+  
 # Use d/plyr function to rename columns
 # Variable names are also subject to change dependant on user
 
